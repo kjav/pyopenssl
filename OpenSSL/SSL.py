@@ -1969,6 +1969,13 @@ class Connection(object):
 
         return _ffi.buffer(data[0], data_len[0])[:]
 
+    def get_secure_renegotiation_support(self):
+        """
+       	Get state of peer support of secure renegotiation
+        :return: True if supports secure renegotiation, False if not
+        """
+        return bool(_lib.SSL_get_secure_renegotiation_support(self._ssl));
+
 
 
 ConnectionType = Connection
