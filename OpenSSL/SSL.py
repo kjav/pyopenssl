@@ -1632,6 +1632,12 @@ class Connection(object):
 
         _lib.SSL_set_shutdown(self._ssl, state)
 
+    def state_string(self):
+        """
+        Get a verbose state description
+        :return: A string representing the state
+        """
+        return _ffi.string(_lib.SSL_state_string_long(self._ssl))
 
     def state_string(self):
         """
