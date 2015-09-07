@@ -2363,8 +2363,6 @@ class ConnectionTests(TestCase, _LoopbackMixin):
         (server, client) = socket_pair()
         server = self._loopbackServerFactory(server)
         client = self._loopbackClientFactory(client)
-        
-        def 
 
         self.assertEqual('before/accept initialization',
                          server.state_string().decode())
